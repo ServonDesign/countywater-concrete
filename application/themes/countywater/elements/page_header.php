@@ -1,4 +1,4 @@
-<header id="header" class="header" style="margin-top: 30px;">
+<header id="header" class="header">
 			<div class="header--container">
 
 				<div class="header__btn--call">
