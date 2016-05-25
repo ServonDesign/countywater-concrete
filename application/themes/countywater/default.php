@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- page head -->
+<?php 
+	$this->inc('elements/page_head.php');
+	$th = Loader::helper('text');
+	$class = $th->sanitizeFileSystem($c->getCollectionName(), $leaveSlashes=false);
+?>
+<!-- end of page head -->
 
-<head>
 
-	<!-- Basic Page Needs
-	================================================== -->
-	<meta charset="utf-8">
-	<title>Title</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<!-- Useful Metas
-	================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-	<!-- ================================================== -->
-
-	<!-- CSS
-	================================================== -->
-	<link rel="stylesheet" href="<?= $this->getThemePath() ?>/resources/css/main.css" />
-	<?= Loader::element("header_required"); ?>
-</head>
-
-<body>
+<body class="<?= $class; ?>">
 
 <div class="<?=$c->getPageWrapperClass()?>">
+
 
 	<nav id="my-menu" class="js-primary-nav">
 		<?php
@@ -40,116 +26,67 @@
 		</div>
 
 		<!-- Header -->
-		<?php $this->inc('elements/header.php'); ?>
+		<?php $this->inc('elements/page_header.php'); ?>
 		<!-- end of Header -->
 
 		<!-- Page Alert -->
-		<section id="page-alert" class="alert">
-			<div class="alert--container">
-				<div class="alert__announcement">
-					<?php
-						$a = new GlobalArea('Page Alert');
-						$a->display();
-					?>
-				</div>
-			</div>
-		</section>
+		<?php $this->inc('elements/page_alert.php'); ?>
 		<!-- End of Page Alert -->
 
 		<section id="main-content" class="main-section">
 				<div class="main--container">
 
-					<div class="page-sidebar">
-						<?php $a = new Area('Sidebar');  //$a->display($c); ?>
-
-						<div class="portlet portlet-account portlet-main portlet-blue-green">
-							<div class="portlet__container">
-								<div class="portlet__content">
-									<h3 class="portlet__title">
-										<?php $a = new Area('Sidebar Title');  $a->display($c); ?>
-									</h3>
-
-									<?php $a = new Area('Sidebar Nav');  $a->display($c); ?>
-									
-								</div>
-							</div>
-						</div>
-						
-						<!-- Report Link -->
-						<?php $a = new Area('Sidebar Report');  $a->display($c); ?>
-
-						<!-- Ask Link -->
-						<?php $a = new Area('Sidebar Ask');  $a->display($c); ?>
-
-						<!-- Moving Link -->
-						<?php $a = new Area('Sidebar Moving');  $a->display($c); ?>
-
-
-					</div>
+					<!-- Page Sidebar -->
+					<?php $this->inc('elements/defaults/page_sidebar.php'); ?>
+					<!-- End of Page SideBar -->
 					
 					<div class="page-content">
-
 						<div class="content__image">
 							<div class="ratio--16-9">
 								<?php $a = new GlobalArea('Content Hero');  $a->display($c); ?>
 							</div>
 						</div>
-
 						<div class="content__body">
-							<div class="main__content">
-								<div class="portlet portlet-main-content">
-									<div class="portlet__container">
-										<div class="portlet__content">
-
-											<?php $a = new Area('Content Proper');  $a->display($c); ?>
-
-										</div>
-									</div>
-								</div>
+							<div class="main__content">		
+								<?php 
+								if ($class == 'bill') { $this->inc('elements/bill/bill_page_portlets.php'); } 
+								?>
+					
+								<!-- main content -->
+								<?php
+									switch ($class)
+									{
+									    case "about-us":
+									        $this->inc('elements/about/about_maincontent.php');
+									        break;
+									    case "account":
+									        $this->inc('elements/account/account_maincontent.php');
+									        break;
+									    case "bill":
+									        $this->inc('elements/bill/bill_maincontent.php');
+									        break;
+									    case "business":
+									        $this->inc('elements/business/business_maincontent.php');
+									        break;
+									    case "faq":
+									        $this->inc('elements/faq/faq_maincontent.php');
+									        break;
+									}
+								?>
+								<!-- end main content -->
 							</div>
 							<div class="main__subcontent">
-								<div class="portlet portlet-blue-green">
-									<div class="portlet__container">
-										<div class="portlet__content">
-
-											<?php $a = new Area('Sub Content Column 1');  $a->display($c); ?>
-
-										</div>
-										<div class="portlet__icon">
-											<svg>
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#drop"></use>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div class="portlet portlet-blue">
-									<div class="portlet__container">
-										<div class="portlet__content">
-
-											<?php $a = new Area('Sub Content Column 2');  $a->display($c); ?>
-
-										</div>
-										<div class="portlet__icon">
-											<svg>
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#drop"></use>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div class="portlet portlet-blue-dim">
-									<div class="portlet__container">
-										<div class="portlet__content">
-
-											<?php $a = new Area('Sub Content Column 3');  $a->display($c); ?>
-
-										</div>
-										<div class="portlet__icon">
-											<svg>
-												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#drop"></use>
-											</svg>
-										</div>
-									</div>
-								</div>
+								<?php 
+									switch ($class)
+									{
+									    case "about-us":
+									        $this->inc('elements/about/about_subcontent.php');
+									        break;
+									    case "account":
+									        $this->inc('elements/account/account_subcontent.php');
+									        break;
+									}
+								?>						
 							</div>
 						</div>
 					</div>
@@ -160,8 +97,8 @@
 
 		<div class="bg-pattern"></div>
 
-<!-- footer -->
-<?php $this->inc('elements/footer.php'); ?>
-<!-- end of footer -->
+<!-- page footer -->
+<?php $this->inc('elements/page_footer.php'); ?>
+<!-- end of page footer -->
 
 

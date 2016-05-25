@@ -19,12 +19,10 @@
 				<div class="header__nav">
 
 					<div class="header__nav--top">
-						<h3 class="contact--nav">
-							<?php
-			                	$a = new GlobalArea('Header Contact Number');
-			                	$a->display();
-			                ?>
-						</h3>
+						<?php
+			                $a = new GlobalArea('Header Contact Number');
+			                $a->display();
+			            ?>
 					</div>
 
 					<div class="header__nav--main">

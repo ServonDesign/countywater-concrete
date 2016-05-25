@@ -45,105 +45,25 @@
 		<!-- end of Page SVG Sprite -->
 
 		<!-- Header -->
-		<?php $this->inc('elements/header.php'); ?>
+		<?php $this->inc('elements/page_header.php'); ?>
 		<!-- end of Header -->
 
 		<!-- Page Alert -->
-		<section id="page-alert" class="alert">
-			<div class="alert--container">
-				<div class="alert__announcement">
-					<?php
-						$a = new GlobalArea('Page Alert');
-						$a->display();
-					?>
-				</div>
-			</div>
-		</section>
+		<?php $this->inc('elements/page_alert.php'); ?>
 		<!-- End of Page Alert -->
 
-		<section id="page-hero" class="hero">
-			<div class="hero--container">
-				<div class="hero__content">
-					<div class="hero__image">
-					  <?php 
-						$hero_image = new Area('Hero Image');
-						$hero_image->display();
-					  ?>
-					</div>
-					<div class="hero__slider__container">
-						<div class="hero-slider">
-							<div class="hero__slider__item">
-								<?php
-									$slider_item1 = new Area('Home Slider Item1');
-									$slider_item1->display();
-								?>
-							</div>
-							<div class="hero__slider__item">
-								<?php
-									$slider_item2 = new Area('Home Slider Item2');
-									$slider_item2->display();
-								?>
-							</div>
-							<div class="hero__slider__item">
-								<?php
-									$slider_item3 = new Area('Home Slider Item3');
-									$slider_item3->display();
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- Page Hero -->
+		<?php $this->inc('elements/page_hero.php'); ?>
+		<!-- End of Page Hero -->
 
-		<section id="page-portlets" class="portlets">
-			<div class="portlets--container">
-				<div class="portlet-group">
-
-					<?php
-						$a = new Area('Home Column 1 Portlet Top');
-						$a->display();
-					?>
-
-					<?php
-						$a = new Area('Home Column 1 Portlet Bottom');
-						$a->display();
-					?>
-
-				</div>
-				<div class="portlet-group">
-
-					<?php
-						$a = new Area('Home Column 2 Portlet Top');
-						$a->display();
-					?>
-
-					<?php
-						$a = new Area('Home Column 2 Portlet Bottom');
-						$a->display();
-					?>
-					
-				</div>
-				<div class="portlet-group">
-
-					<?php
-						$a = new Area('Home Column 3 Portlet Top');
-						$a->display();
-					?>
-
-					<?php
-						$a = new Area('Home Column 3 Portlet Bottom');
-						$a->display();
-					?>
-
-				</div>
-			</div>
-		</section>
+		<!-- Home Portlets -->
+		<?php $this->inc('elements/home/home_page_portlets.php'); ?>
+		<!-- End of Page Hero -->
 
 	</div>
 
 	<div class="bg-pattern"></div>
 
 <!-- footer -->
-<?php $this->inc('elements/footer.php'); ?>
+<?php $this->inc('elements/page_footer.php'); ?>
 <!-- end of footer -->
