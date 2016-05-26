@@ -24,7 +24,7 @@
 						$a = new Area('Home Column 2 Portlet Bottom');
 						$a->display();
 					?>
-					
+
 				</div>
 				<div class="portlet-group">
 

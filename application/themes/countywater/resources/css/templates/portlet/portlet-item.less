@@ -4,11 +4,19 @@
 	border-radius: 0.5rem;
 	width: 100%;
 	margin: 0 auto 1.2rem;
-
+	position: relative;
 	text-decoration: none;
 
 	&:hover {
 		color: @white;
+	}
+
+	& > a {
+		position: absolute;
+    top: 0;
+    width: 100%;
+    height: inherit;
+    z-index: 2;
 	}
 
 	h2.portlet__title {
@@ -34,7 +42,7 @@
 	  @media(min-width: @md-min) {
 		height: 9.2rem;
 	  }
-		  
+
 
 	  @media(min-width: @lg-min) {
 		height: 5.5rem;
@@ -61,7 +69,7 @@
 	  @media(min-width: @md-min) {
 		height: 9.2rem;
 	  }
-		  
+
 
 	  .portlet__container {
 		padding: 0.8rem 1.5rem 1rem;
@@ -97,6 +105,15 @@
 	.portlet__description {
 		font-size: 1.4rem;
 		margin-bottom: 0;
+
+		p {
+			display: inline;
+		}
+
+		& > p:last-child {
+			display: inline;
+		}
+
 		svg {
 			width: 1.6rem;
 			height: 1.6rem;
@@ -106,7 +123,7 @@
 		@media(min-width: @md-min) {
 			font-size: 1.6rem;
 		}
-			
+
 	}
 	.portlet__icon {
 		height: 3.2rem;
@@ -117,20 +134,20 @@
 		top: 12px;
 
 		@media(min-width: @sm-min) {
-			width: auto; 
+			width: auto;
 
 		}
 
 		@media(min-width: @md-min) {
 			width: 5.5rem;
-			right: 5px; 
+			right: 5px;
 		}
 
-		@media(min-width: @lg-min) { 
-			right: 5px;  
+		@media(min-width: @lg-min) {
+			right: 5px;
 		}
-			
-			
+
+
 
 		svg {
 			width: 3.2rem;
@@ -211,14 +228,14 @@
 		top: 3px;
 
 		@media(min-width: @xs-min) {
-			top: 3px;   
+			top: 3px;
 		}
-			
 
-		@media(min-width: @lg-min) { 
-			top: 7px;  
+
+		@media(min-width: @lg-min) {
+			top: 7px;
 		}
-			
+
 
 		  svg {
 
@@ -227,9 +244,9 @@
 
 			@media(min-width: @sm-min) {
 				width: 3.2rem;
-				height: 4.4rem; 
+				height: 4.4rem;
 			}
-				
+
 		  }
 	  }
 
@@ -245,7 +262,7 @@
 
 		@media(min-width: @md-min) {
 		  display: block;
-		}  
+		}
 	  }
 
 	  .portlet__icon--sm {
@@ -253,7 +270,7 @@
 
 		@media(min-width: @md-min) {
 		  display: none;
-		}  
+		}
 	  }
 	}
 
@@ -266,9 +283,9 @@
 		right: 5px;
 
 		@media(min-width: @sm-min) {
-			right: 10px; 
+			right: 10px;
 		}
-			
+
 		  svg {
 			  width: 5rem;
 			  height: 4.4rem;
@@ -290,15 +307,15 @@
 
 		@media(min-width: @md-min) {
 		  right: 1.5rem;
-		}    
+		}
 	  }
 	  .portlet__description {
 		padding-right: 5rem;
 
 		@media(min-width: @md-min) {
-			padding-right: 8rem 
+			padding-right: 8rem
 		}
-			
+
 	  }
 	}
 
@@ -351,7 +368,7 @@
 	@media(min-width: @xs-min) {
 		width: 100%;
 	}
-		
+
 	@media(min-width: @sm-min) {
 	  width: 100%;
 	}
@@ -388,10 +405,10 @@
 	position: relative;
 	width: auto;
 
-	@media(min-width: @lg-min) { 
-		left: 0;  
+	@media(min-width: @lg-min) {
+		left: 0;
 	}
-		
+
 
 	svg {
 	  width: 1.8rem;
@@ -412,7 +429,7 @@
   background-color: @green;
 
   &:hover {
-	background-color: darken(desaturate(@green, 3%), 5%); 
+	background-color: darken(desaturate(@green, 3%), 5%);
   }
 }
 
@@ -420,7 +437,7 @@
   background-color: @pink-dark;
 
   &:hover {
-	background-color: darken(desaturate(@pink-dark, 3%), 5%); 
+	background-color: darken(desaturate(@pink-dark, 3%), 5%);
   }
 }
 
@@ -428,7 +445,7 @@
   background-color: @blue-dark;
 
   &:hover {
-	background-color: darken(desaturate(@blue-dark, 3%), 5%); 
+	background-color: darken(desaturate(@blue-dark, 3%), 5%);
   }
 }
 
@@ -436,7 +453,7 @@
   background-color: @blue-light;
 
   &:hover {
-	background-color: darken(desaturate(@blue-light, 3%), 5%); 
+	background-color: darken(desaturate(@blue-light, 3%), 5%);
   }
 }
 
@@ -444,7 +461,7 @@
   background-color: @blue-green;
 
   &:hover {
-	background-color: darken(desaturate(@blue-green, 3%), 5%); 
+	background-color: darken(desaturate(@blue-green, 3%), 5%);
   }
 }
 
@@ -452,7 +469,7 @@
   background-color: @blue;
 
   &:hover {
-	background-color: darken(desaturate(@blue, 3%), 5%); 
+	background-color: darken(desaturate(@blue, 3%), 5%);
   }
 }
 
@@ -460,7 +477,7 @@
   background-color: @orange;
 
   &:hover {
-	background-color: darken(desaturate(@orange, 3%), 5%); 
+	background-color: darken(desaturate(@orange, 3%), 5%);
   }
 }
 
@@ -468,7 +485,7 @@
   background-color: @main-content-bg;
 
   &:hover {
-	//background-color: darken(desaturate(@main-content-bg, 3%), 5%); 
+	//background-color: darken(desaturate(@main-content-bg, 3%), 5%);
   }
 }
 
@@ -476,7 +493,7 @@
   background-color: @blue-dim;
 
   &:hover {
-	background-color: darken(desaturate(@blue-dim, 3%), 5%); 
+	background-color: darken(desaturate(@blue-dim, 3%), 5%);
   }
 }
 
@@ -484,13 +501,13 @@
   //background-color: @blue-dim;
 
   &:hover {
-	background-color: darken(desaturate(@main-content-bg, 3%), 5%); 
+	background-color: darken(desaturate(@main-content-bg, 3%), 5%);
   }
 }
 
 .portlet-bill:first-child {
 	&:hover {
-		background-color: @blue-green; 
+		background-color: @blue-green;
 	}
 }
 
@@ -500,12 +517,12 @@
 
 	.portlet-group {
 		.flexbox();
-		.flex-wrap(wrap); 
+		.flex-wrap(wrap);
 
 		@media(min-width: @md-min) {
-			.flex-wrap(nowrap); 
+			.flex-wrap(nowrap);
 		}
-			
+
 
 		& > .portlet:first-child {
 			width: 100%;
@@ -519,7 +536,7 @@
 			.portlet__description {
 				color: @white;
 			}
-				
+
 		}
 
 		& > .portlet:last-child {
@@ -590,7 +607,7 @@
 	  @media(min-width: @md-min) {
 		right: 0.5rem;
 	  }
-		  
+
 	}
 
 	p {
@@ -605,7 +622,31 @@
 	top: 12px;
 
 	@media(min-width: @sm-min) {
-		top: 0; 
+		top: 0;
 	}
-		
+
+}
+
+.portlet-home {
+	.portlet__description p {
+		display: inline;
+	}
+}
+
+.portlet-bill {
+	.portlet__description p {
+		display: inline;
+
+		a {
+			border-bottom: 1px solid;
+		}
+	}
+
+	.portlet__title {
+		margin-bottom: 0.66rem;
+	}
+	.portlet__description {
+		margin-bottom: 0.66rem;
+	}
+
 }

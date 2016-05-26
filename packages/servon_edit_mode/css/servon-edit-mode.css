@@ -1,0 +1,67 @@
+.ccm-ui img{
+    height: 23px;
+}
+
+#ccm-dashboard-page.ccm-ui img{
+	height: auto;
+}
+
+.ccm-ui header{
+    height: auto;
+    background: inherit;
+}
+
+a.ccm-panel-add-block-draggable-block-type img{
+    display: inline-block;
+}
+
+#ccm-panel-detail-page-versions iframe{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#ccm-toolbar input{
+    background: inherit;
+}
+
+[data-area-id]{
+	width: 100%;
+	min-width: 150px;
+	min-height: 25px;
+}
+
+
+.editmode a{
+	-webkit-transition: none;
+	transition: none;
+}
+
+.editmode .banner-image {
+	padding:20px;
+	position: relative;
+}
+
+.editmode .branch-details-map {
+	height:100px;
+}
+
+.editmode .redactor-editor {
+	min-width: 500px;
+}
+
+.editmode .c5-inline-edit{
+	width: 100%;
+}
+
+// .editmode div.ccm-area-drag-area{
+// 	-webkit-flex-grow: 1;
+// 	flex-grow: 1;
+// }
+
+.editmode .property-image-wrap {
+	max-width:200px;
+}
+
+.fixed{
+	color: green;
+}

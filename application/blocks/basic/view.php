@@ -1,4 +1,4 @@
-<?php 
+<?php
 	defined('C5_EXECUTE') or die("Access Denied.");
 ?>
 
@@ -25,5 +25,7 @@
 
 <?php //echo '<img src="', $image->path, '" alt="', $file->title, '" title="', $file->title, '" >'; ?>
 
-
-<!-- <a href="<?php //echo $link; ?>"<?php if($externalLink) //echo 'target="_blank"'; ?>>Link</a> -->
+<?php if ($link): ?>
+	<?php echo $link; ?>
+<a href="<?php echo $link; ?>"<?php if($externalLink) echo 'target="_blank"'; ?>>Link</a>
+<?php endif; ?>

@@ -2,9 +2,9 @@
 			<div class="hero--container">
 				<div class="hero__content">
 					<div class="hero__image">
-					  <?php 
-						$hero_image = new Area('Hero Image');
-						$hero_image->display();
+					  <?php
+							$hero_image = new Area('Hero Image');
+							$hero_image->display();
 					  ?>
 					</div>
 					<div class="hero__slider__container">
