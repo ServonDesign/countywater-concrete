@@ -3,4 +3,4 @@
 ?>
 
 <h1><?php echo $text; ?></h1>
-<p><?php echo $content; ?><small><?php echo $subcontent; ?></small> </p>
+<p><?php echo $content; ?><span><?php echo $subcontent; ?></span> </p>

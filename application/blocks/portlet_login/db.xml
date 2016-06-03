@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<schema
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.concrete5.org/doctrine-xml/0.5"
+        xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd"
+>
+    <table name="btLoginPortlet">
+        <field name="bID" type="integer">
+            <unsigned/>
+            <key/>
+        </field>
+        <field name="text" type="string" size="255"></field>
+        <field name="Loginlink" type="string" size="255"></field>
+        <field name="content" type="text"></field>
+        <field name="link" type="text"></field>
+        <field name="linkname" type="text"></field>
+
+        <field name="radio" type="string" size="255"></field>
+        <field name="checkbox" type="string" size="255"></field>
+        <field name="selectinput" type="string" size="255"></field>
+
+        <field name="boolean" type="boolean"></field>
+
+        <field name="fileID" type="integer"></field>
+        <field name="imageID" type="integer"></field>
+
+        <field name="linkType" type="integer"></field>
+        <field name="internalPageID" type="integer"></field>
+        <field name="internalPageUrl" type="string" size="255"></field>
+        <field name="externalPageUrl" type="string" size="255"></field>
+    </table>
+</schema>

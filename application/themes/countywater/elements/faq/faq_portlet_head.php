@@ -1,7 +1,12 @@
 <div class="portlet portlet-faq-head portlet-main-content">
 										<div class="portlet__container">
 											<div class="portlet__content">
-												<h2 class="portlet__title">FAQ'S</h2>
+												<h2 class="portlet__title">
+													<?php
+														$a = new Area('FAQ Item Header');
+														$a->display();
+													?>
+												</h2>
 											</div>
 											<div class="portlet__icon">
 												<svg>

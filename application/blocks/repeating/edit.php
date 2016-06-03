@@ -2,17 +2,17 @@
     defined('C5_EXECUTE') or die("Access Denied.");
 ?>
 
-<ul class="nav nav-tabs js-nav-tabs">
+<!-- <ul class="nav nav-tabs js-nav-tabs">
     <li class="active"><a href="#form">Form</a></li>
     <li><a href="#repeating">Repeating Data</a></li>
     <li><a href="#template">Template</a></li>
-</ul>
+</ul> -->
 
 <div class="tab-content js-tab-panes">
-    <div class="tab-pane active" id="form">
+    <div class="tab-pane " id="form">
         <?php $this->inc('form.php'); ?>
     </div>
-    <div class="tab-pane" id="repeating">
+    <div class="tab-pane active" id="repeating">
         <?php $this->inc('repeatingForm.php'); ?>
     </div>
     <div class="tab-pane active" id="template">

@@ -19,7 +19,6 @@
 	var redactorPlugins = <?php echo json_encode($redactorOptions); ?>;
 </script>
 
-<h2>Repeating Data</h2>
 <div class="js-example-list">
 
 </div>
@@ -94,19 +93,21 @@
 		<input type="hidden" name="rd_order[]" class="js-sortOrder" value="<%=order%>">
 		<div class="row">
 			<div class="col-sm-10">
-				<h2>Text Inputs</h2>
+				<h2>FAQ</h2>
 
 				<div class="form-group">
-				    <label for="text-<%=order%>" class="control-label">Text</label>
+				    <label for="text-<%=order%>" class="control-label">Question</label>
 				    <input type="text-<%=order%>" class="form-control" name="rd_text[]" id="text" value="<%=text%>">
 				</div>
 
 				<div class="form-group">
-				    <label for="content-<%=order%>" class="control-label">Content</label>
+				    <label for="content-<%=order%>" class="control-label">Answer</label>
 				   	<textarea name="rd_content[]" id="content-<%=order%>" class="js-list-redactor"><%=content%></textarea>
 				</div>
 
 				<hr>
+
+<div style="display:none;">
 
 				<h2>Checkboxes/Radios/Selects</h2>
 				<div class="form-group">
@@ -270,6 +271,8 @@
                 <!-- end link picker -->
 
 			</div>
+</div>
+
 			<div class="col-sm-2 list-actions">
 				<button class="btn btn-danger js-remove"><i class="fa fa-times"></i></button>
 				<div class="btn-group">
@@ -296,17 +299,3 @@
     listController.hasImagePicker();
     listController.hasFilePicker();
 </script>
-
-
-// $args["rd_order"][]
-// $args["rd_id"][]
-// $args["rd_id-todelete"][]
-
-// $args["rd_text"][]
-// $args["rd_content"][]
-
-// $args["rd_radio"][]
-// $args["rd_checkbox"][]
-// $args["rd_selectinput"][]
-
-// $args["rd_boolean"][]

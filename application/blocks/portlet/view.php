@@ -23,13 +23,27 @@ switch ($radio)
 }
 ?>
 
-<div class="portlet portlet-home portlet-<?php echo $portlettype; ?> portlet-<?php echo $radio ?>">
+<?php
+
+	$page = Page::getByID(strval($internalPageID));
+
+?>
+
+
+
+
+
+<div class="portlet portlet-home portlet-<?php echo $portlettype; ?> portlet-<?php echo $portletsize; ?> portlet-<?php echo $radio ?>">
 	<?php if($link): ?>
-		<a href="<?php echo $link; ?>"></a>
+
+	<a href="<?php echo $link; ?>" <?php if($externalLink): ?>target="_blank"<?php endif; ?>></a>
+
 	<?php endif; ?>
 	<div class="portlet__container">
 		<div class="portlet__content">
 			<h3 class="portlet__title"><?php echo $text; ?></h3>
+
+			<?php if($content != ''): ?>
 			<div class="portlet__description">
 				<?php echo $content; ?>
 
@@ -39,6 +53,7 @@ switch ($radio)
 				</svg>
 				<?php endif; ?>
 			</div>
+			<?php endif; ?>
 
 		</div>
 		<div class="portlet__icon">

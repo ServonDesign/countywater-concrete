@@ -7,24 +7,13 @@
 ?>
 
 <h2>Page Alert</h2>
-<div class="form-group">
-    <label for="text" class="control-label">Alert Name</label>
-    <input type="text" class="form-control" name="text" id="text" value="<?php echo $text; ?>">
-</div>
 
-<div class="form-group">
-    <label for="content" class="control-label">Alert Message</label>
-    <?php echo $editor->outputBlockEditModeEditor('content', $content); ?>
-</div>
-
-<div style="display: none;">
 <div class="form-group">
     <?php
         $name = "radio";
         $options = [
-            ["value" => "first", "text" => "Radio 1 - value: first"],
-            ["value" => "second", "text" => "Radio 2 - value: second"],
-            ["value" => "third", "text" => "Radio 3 - value: third"],
+            ["value" => "on", "text" => "Show Page Alert"],
+            ["value" => "off", "text" => "Do not show Page Alert"],
         ];
         if(empty($radio)){
             $radio = $options[0]["value"]; //setting inital is empty
@@ -42,6 +31,24 @@
         }
     ?>
 </div>
+
+<div class="form-group">
+    <label for="text" class="control-label">Alert Name</label>
+    <input type="text" class="form-control" name="text" id="text" value="<?php echo $text; ?>">
+</div>
+
+<!-- <div class="form-group">
+    <label for="content" class="control-label">Alert Message</label>
+    <?php //echo $editor->outputBlockEditModeEditor('content', $content); ?>
+</div> -->
+
+<div class="form-group">
+    <label for="text" class="control-label">Alert Message</label>
+    <input type="text" class="form-control" name="alertcontent" id="alertcontent" value="<?php echo $alertcontent; ?>">
+</div>
+
+<div style="display: none;">
+
 
 <hr>
 

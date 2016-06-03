@@ -1,4 +1,4 @@
-import $ from "./../vendor/jquery/dist/jquery";
+import jQuery from "./../vendor/jquery/dist/jquery";
 
 const navigation = () => {
 

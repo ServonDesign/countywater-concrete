@@ -76,31 +76,6 @@
 
 <h2>Portlet</h2>
 
-<!-- <div class="form-group">
-    <h2>Portlet Page Location</h2>
-    <?php
-        $name = "portletpagelocation";
-        $options = [
-            ["value" => "home", "text" => "Home"],
-            ["value" => "about", "text" => "About"],
-            ["value" => "account", "text" => "Account"],
-        ];
-        if(empty($portletpagelocation)){
-            $portletpagelocation = $options[0]["value"]; //setting inital is empty
-        }
-
-        foreach ($options as $op) {
-            ?>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="<?php echo $name; ?>" value="<?php echo $op["value"]; ?>"<?php if($op["value"] == $portletpagelocation) echo " checked"; ?>>
-                    <?php echo $op["text"]; ?>
-                </label>
-            </div>
-            <?php
-        }
-    ?>
-</div> -->
 
 <div class="form-group">
     <label for="text" class="control-label">Title</label>
@@ -112,15 +87,48 @@
     <?php echo $editor->outputBlockEditModeEditor('content', $content); ?>
 </div>
 
+<h2>Links</h2>
+<?php extract($linkTypeEnum); // allows access to the enum values like $INTERNAL_PAGE  ?>
+
+<div class="form-group">
+    <label for="linkType">Link Type</label>
+    <select name="linkType" id="linkType" class="form-control js-link-type">
+        <?php
+            foreach ($linkTypeEnumSelect as $text => $value) {
+                echo '<option value="', $value, '"';
+                if($value == $linkType){
+                    echo ' selected';
+                }
+                echo '>', $text, '</option>';
+            }
+        ?>
+    </select>
+</div>
+
+<div class="js-link-options">
+    <div class="form-group" data-link-type="<?php echo $INTERNAL_PAGE; ?>">
+        <label for="internalPageID" class="control-label">Internal Page</label>
+        <?php echo $pageSelector->selectPage('internalPageID', $internalPageID) ?>
+    </div>
+    <div class="form-group" data-link-type="<?php echo $INTERNAL_URL; ?>" style="display: none">
+        <label for="internalPageUrl" class="control-label">Internal Url</label>
+        <input type="text" class="form-control" name="internalPageUrl" id="internalPageUrl" value="<?php echo $internalPageUrl; ?>">
+    </div>
+    <div class="form-group" data-link-type="<?php echo $EXTERNAL_URL; ?>" style="display: none">
+        <label for="externalPageUrl" class="control-label">External Url</label>
+        <input type="text" class="form-control" name="externalPageUrl" id="externalPageUrl" value="<?php echo $externalPageUrl; ?>">
+    </div>
+</div>
 
 <div class="form-group">
     <h2>Portlet Type</h2>
     <?php
         $name = "portlettype";
         $options = [
-            ["value" => "main", "text" => "Large"],
-            ["value" => "small", "text" => "Small"],
-            ["value" => "default", "text" => "Default"],
+            ["value" => "default", "text" => "Default - for sidebar"],
+            ["value" => "account", "text" => "Account"],
+            ["value" => "report", "text" => "Report Leak"],
+            ["value" => "meter", "text" => "Reading Meter"],
         ];
         if(empty($portlettype)){
             $portlettype = $options[0]["value"]; //setting inital is empty
@@ -131,6 +139,31 @@
             <div class="radio">
                 <label>
                     <input type="radio" name="<?php echo $name; ?>" value="<?php echo $op["value"]; ?>"<?php if($op["value"] == $portlettype) echo " checked"; ?>>
+                    <?php echo $op["text"]; ?>
+                </label>
+            </div>
+            <?php
+        }
+    ?>
+</div>
+
+<div class="form-group">
+    <h2>Portlet Size</h2>
+    <?php
+        $name = "portletsize";
+        $options = [
+            ["value" => "main", "text" => "Large"],
+            ["value" => "small", "text" => "Small"],
+        ];
+        if(empty($portletsize)){
+            $portletsize = $options[0]["value"]; //setting inital is empty
+        }
+
+        foreach ($options as $op) {
+            ?>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="<?php echo $name; ?>" value="<?php echo $op["value"]; ?>"<?php if($op["value"] == $portletsize) echo " checked"; ?>>
                     <?php echo $op["text"]; ?>
                 </label>
             </div>
@@ -280,45 +313,16 @@
 
 <hr>
 
-</div>
 
 
-<h2>Links</h2>
-<?php extract($linkTypeEnum); // allows access to the enum values like $INTERNAL_PAGE  ?>
 
-<div class="form-group">
-    <label for="linkType">Link Type</label>
-    <select name="linkType" id="linkType" class="form-control js-link-type">
-        <?php
-            foreach ($linkTypeEnumSelect as $text => $value) {
-                echo '<option value="', $value, '"';
-                if($value == $linkType){
-                    echo ' selected';
-                }
-                echo '>', $text, '</option>';
-            }
-        ?>
-    </select>
-</div>
 
-<div class="js-link-options">
-    <div class="form-group" data-link-type="<?php echo $INTERNAL_PAGE; ?>">
-        <label for="internalPageID" class="control-label">Internal Page</label>
-        <?php echo $pageSelector->selectPage('internalPageID', $internalPageID) ?>
-    </div>
-    <div class="form-group" data-link-type="<?php echo $INTERNAL_URL; ?>" style="display: none">
-        <label for="internalPageUrl" class="control-label">Internal Url</label>
-        <input type="text" class="form-control" name="internalPageUrl" id="internalPageUrl" value="<?php echo $internalPageUrl; ?>">
-    </div>
-    <div class="form-group" data-link-type="<?php echo $EXTERNAL_URL; ?>" style="display: none">
-        <label for="externalPageUrl" class="control-label">External Url</label>
-        <input type="text" class="form-control" name="externalPageUrl" id="externalPageUrl" value="<?php echo $externalPageUrl; ?>">
-    </div>
-</div>
 
 <div class="form-group">
     <label for="linkname" class="control-label">Link Name</label>
     <input type="text" class="form-control" name="linkname" id="linkname" value="<?php echo $linkname; ?>">
+</div>
+
 </div>
 
 <script>

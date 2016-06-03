@@ -2,11 +2,10 @@
 			<div class="header--container">
 
 				<div class="header__btn--call">
-					<a href="#">
-						<svg>
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone-call"></use>
-						</svg>
-					</a>
+					<?php
+	                	$a = new GlobalArea('Header Site Call Button');
+	                	$a->display();
+	                ?>
 				</div>
 
 				<div class="header__brand">
@@ -19,10 +18,12 @@
 				<div class="header__nav">
 
 					<div class="header__nav--top">
-						<?php
-			                $a = new GlobalArea('Header Contact Number');
-			                $a->display();
-			            ?>
+						<h3 class="contact--nav">
+							<?php
+						      	$a = new GlobalArea('Header Contact Number');
+						      	$a->display();
+						    ?>
+					    </h3>
 					</div>
 
 					<div class="header__nav--main">
@@ -31,7 +32,7 @@
 		                $a = new GlobalArea('Header Site Nav');
 		                $a->display();
 		                ?>
-	
+
 						<div class="header__nav--menu">
 							<a href="#">
 								<svg>

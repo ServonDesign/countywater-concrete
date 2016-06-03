@@ -14,12 +14,12 @@
 
 <div class="form-group">
     <label for="content" class="control-label">Content</label>
-    <?php echo $editor->outputBlockEditModeEditor('content', $content); ?>
+    <textarea style="width:100%" name="content" id="content" rows="8" cols="40"><?php echo $content ?></textarea>
 </div>
 
 <div class="form-group">
-    <label for="subcontent" class="control-label">Sub content</label>
-    <input type="text" class="form-control" name="subcontent" id="subcontent" value="<?php echo $subcontent; ?>">
+    <label for="subcontent" class="control-label">Sub content (will be hidden in smaller devices)</label>
+    <textarea style="width:100%" type="text" class="form-control" name="subcontent" id="subcontent" rows="8" cols="40"><?php echo $subcontent ?></textarea>
 </div>
 
 <div style="display:none;">

@@ -3,11 +3,15 @@
 	$this->inc('elements/page_head.php');
 	$th = Loader::helper('text');
 	$class = $th->sanitizeFileSystem($c->getCollectionName(), $leaveSlashes=false);
+
+	$bodyClass = '';
+	if( $c->isEditMode() )
+	  $bodyClass .= 'edit-mode';
 ?>
 <!-- end of page head -->
 
 
-<body class="<?= $class; ?>">
+<body class="<?= $class; ?> <?= $bodyClass ?>">
 
 <div class="<?=$c->getPageWrapperClass()?>">
 
@@ -95,7 +99,7 @@
 					<div class="page-content">
 						<div class="content__image">
 							<div class="ratio--16-9">
-								<?php $a = new GlobalArea('Content Hero');  $a->display($c); ?>
+								<?php $a = new Area('Content Hero');  $a->display($c); ?>
 							</div>
 						</div>
 						<div class="content__body">

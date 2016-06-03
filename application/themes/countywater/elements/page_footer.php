@@ -7,10 +7,36 @@
 							</div>
 
 							<div class="footer__links">
-								<?php
-				                	$a = new GlobalArea('Footer Links');
-				                	$a->display();
-				                ?>
+								<div>
+									<?php
+					                	$a = new GlobalArea('Footer Links First');
+					                	$a->display();
+					                ?>
+				                </div>
+								<div>
+									<?php
+					                	$a = new GlobalArea('Footer Links Second');
+					                	$a->display();
+					                ?>
+				                </div>
+				                <div>
+									<?php
+					                	$a = new GlobalArea('Footer Links Third');
+					                	$a->display();
+					                ?>
+				                </div>
+				                <div>
+									<?php
+					                	$a = new GlobalArea('Footer Links Fourth');
+					                	$a->display();
+					                ?>
+				                </div>
+				                <div>
+									<?php
+					                	$a = new GlobalArea('Footer Links Fifth');
+					                	$a->display();
+					                ?>
+				                </div>
 							</div>
 
 							<div class="footer__copyright">
@@ -18,6 +44,7 @@
 				                	$a = new GlobalArea('Footer Copyright');
 				                	$a->display();
 				                ?>
+				                <a href="#">Website Design &amp; Build by Servon Design</a>
 							</div>
 					</div>
 				</div>

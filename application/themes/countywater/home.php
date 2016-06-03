@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- page head -->
+<?php
+	$this->inc('elements/page_head.php');
+	$th = Loader::helper('text');
+	$class = $th->sanitizeFileSystem($c->getCollectionName(), $leaveSlashes=false);
 
-<head>
+	$bodyClass = '';
+	if( $c->isEditMode() )
+	  $bodyClass .= 'edit-mode';
+?>
+<body class="<?= $class; ?> <?= $bodyClass ?>">
 
-	<!-- Basic Page Needs
-	================================================== -->
-	<meta charset="utf-8">
-	<title>Title</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<!-- Useful Metas
-	================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-	<!-- ================================================== -->
-
-	<!-- CSS
-	================================================== -->
-	<link rel="stylesheet" href="<?= $this->getThemePath() ?>/resources/css/main.css" />
-	<?= Loader::element("header_required"); ?>
-
-</head>
-
-<body>
+<!-- end of page head -->
 
 <div class="<?=$c->getPageWrapperClass()?>">
-	
+
 	<!-- Flyout Nav -->
 	<nav id="my-menu" class="js-primary-nav">
 		<?php
@@ -37,10 +24,10 @@
 	<!-- end of Flyout Nav -->
 
 	<div id="my-wrapper" class="page-wrapper">
-		
+
 		<!-- Page SVG Sprite -->
 		<div class="svg-sprite">
-			<?php $this->inc('elements/svg.php'); ?>		
+			<?php $this->inc('elements/svg.php'); ?>
 		</div>
 		<!-- end of Page SVG Sprite -->
 

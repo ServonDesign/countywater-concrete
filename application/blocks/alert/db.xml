@@ -11,6 +11,7 @@
         </field>
         <field name="text" type="string" size="255"></field>
         <field name="content" type="text"></field>
+        <field name="alertcontent" type="text"></field>
 
         <field name="radio" type="string" size="255"></field>
         <field name="checkbox" type="string" size="255"></field>
